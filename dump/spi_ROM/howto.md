@@ -1,5 +1,5 @@
 ## This document attempts to describe How to create a full flah ROM backup from hi3536dv197 board.
-## I assume that most of the information conatined herein is compatible with hi3536v100 boards in general.
+## I assume that most of the information conatined herein is compatible with hi3536dv100 boards in general.
 ##
 ## 1.) Configure a tftp server on a local network machine. Set the ip of the tftp server to 192.168.1.99 (you may use a different ip/subnet if you set the 'serverip' and/or 'ipaddr' environment variables once you have gained access to the uBoot shell in step 5)
 ## 
