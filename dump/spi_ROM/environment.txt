@@ -1,0 +1,42 @@
+hisilicon # printenv
+bootdelay=1
+baudrate=115200
+bootfile="uImage"
+rgmii_mode=1
+s00=sf probe 0
+s01=sf read 0x84800000 0x60000 0x10000
+s02=sf read 0x84900000 0x70000 0x10000
+s03=logo
+s10=sf probe 0
+s11=sf read 0x82000000 0xE0000 0x280000
+s12=sf read 0x81000000 0x360000 0xCA0000
+s13=bootm 0x82000000 0x81000000
+s21=bzr 200 1
+s22=bzr 55 2
+s23=usb start
+s24=fatload usb 0 0x82000000 help.rom
+s30=sf probe 0
+s31=sf erase 0xE0000 0x280000
+s32=sf erase 0x360000 0xCA0000
+s33=sf write 0x823A0000 0x360000 0xCA0000
+s34=sf write 0x82120000 0xE0000 0x280000
+s41=bzr 55 2
+s42=bzr 500 1
+s43=bzr 500 5
+s44=reset
+vobuf=0x8E000000
+jpeg_addr=0x84800000
+jpeg_size=0x10000
+bootargs=mem=170M console=ttyAMA0,115200 root=1f05 init=/linuxrc rw mtdparts=hi_sfc:320K(U),64K(E),128K(L),384K(C),2560K(K),12928K(R) ramdisk_size=7400
+bootcmd=${s00};${s01};${s02};${s03};${s10};${s11};${s12};${s13};${s21};${s22};${s23};${s24};${s30};${s31};${s32};${s33};${s34};${s41};${s42};${s43};${s44};
+stdin=serial
+stdout=serial
+stderr=serial
+verify=n
+ver=U-Boot 2010.06-dirty (Aug 16 2018 - 15:34:31)
+ethaddr=6A:B8:62:36:6D:E3
+netmask=255.255.255.0
+ipaddr=192.168.10.10
+serverip=192.168.10.99
+
+Environment size: 1134/65532 bytes
