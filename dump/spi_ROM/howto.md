@@ -65,3 +65,5 @@ hisilicon # tftp 0x81000000 hi3536_spiflash_image_16M_STOCK_HEIMVISION_hm241_bak
 ## 	 16.000 MB upload ok.
 
 ## That should do it. Verify that you have a valid 16M copy of the ROM in your server's tftp folder.
+
+Turns out I wasn't paying attention to the endiannes. That was the first flash dump I've ever attempted.
